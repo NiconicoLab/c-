@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
         boost::thread th1(&thread1);
         boost::thread th2(&thread2);
 
-	while(1)
+	while(loop)
 	{
 		if (kbhit())
 		{
