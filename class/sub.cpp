@@ -8,6 +8,15 @@ Class1::Class1() : number1(10), number2(23)
 		  << "number2=" << number2 << std::endl;
 }
 
+Class1::~Class1()
+{
+	number1 = 0;
+	number2 = 0;
+	std::cout << "Class::~Class1()" << "\n"
+		  << "number1=" << number1 << "\n"
+		  << "number2=" << number2 << std::endl;
+}
+
 void Class1::init_table(void)
 {
 	for(int i = 0; i < NUM; i++)

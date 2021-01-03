@@ -18,7 +18,7 @@ protected:
 
 public:
 	Class1();
-	~Class1() { ; }
+	~Class1();
 
 	void init_table(void);
 	void print_table(void);
