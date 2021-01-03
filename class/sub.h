@@ -17,7 +17,7 @@ protected:
 	};
 
 public:
-	Class1() { ; }
+	Class1();
 	~Class1() { ; }
 
 	void init_table(void);
@@ -26,6 +26,8 @@ public:
 private:
 	int add(int a, int b);
 	int table[NUM][NUM];
+	int number1;
+	int number2;
 };
 
 #endif
