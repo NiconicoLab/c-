@@ -17,8 +17,8 @@ protected:
 	};
 
 public:
-	Class1();
-	~Class1();
+	Class1();  // インスタンスが生成された時に呼ばれる
+	~Class1(); // インスタンスが破棄された時に呼ばれる
 
 	void init_table(void);
 	void print_table(void);
