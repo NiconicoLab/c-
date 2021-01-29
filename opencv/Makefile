@@ -2,9 +2,11 @@ CXX = g++
 CXXFLAGS = -Wall -O -std=c++14 `pkg-config opencv4 --cflags`
 LDFLAGS = `pkg-config opencv4 --libs`
 
-all: show_image
+all: show_image  show_movie
 
 clean:
-	rm -rf show_image *.o *~
+	rm -rf show_image show_movie *.o *~
 
 show_image:
+
+show_movie:
