@@ -1,0 +1,12 @@
+CXX = g++
+CXXFLAGS = -Wall -O -std=c++14 `pkg-config --cflags opencv4`
+LDFLAGS = `pkg-config --libs opencv4`
+
+main: main.o
+	$(CXX) -o $@ $< $(LDFLAGS)
+
+.cpp.o:
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
+
+clean:
+	rm -rf main *.o *~
