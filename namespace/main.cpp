@@ -2,11 +2,11 @@
 
 namespace my_namespace
 {
-    void print(void);
-    void print_wrapper(void)
+	void print(void);
+	void print_wrapper(void)
 	{
-        print(); // namespace空間内は修飾なしで呼び出し可能
-    }
+		print(); // namespace空間内は修飾なしで呼び出し可能
+	}
 }
 
 void my_namespace::print(void)
@@ -17,14 +17,14 @@ void my_namespace::print(void)
 
 namespace my_namespace2
 {
-    void print(void)
+	void print(void)
 	{
 		std::cout << "other namespace" << std::endl;
 	}
-    void print_wrapper(void)
+	void print_wrapper(void)
 	{
-        my_namespace::print(); // 別のnamespace空間内の関数を呼び出す
-    }
+		my_namespace::print(); // 別のnamespace空間内の関数を呼び出す
+	}
 }
 
 
