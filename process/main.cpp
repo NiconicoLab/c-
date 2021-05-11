@@ -43,10 +43,17 @@ void child_process_func()
 	sleep(5);
 }
 
+// fork時は，グローバル変数や関数内のstatic変数もコピーされる
+int tmp = 1;
+
 int main(int argc, char **argv)
 {
 	// 子プロセス起動
 	pid_t pid = fork();
+
+	// マルチスレッド時にforkは行わない(場合によってはデッドロックが発生する)
+	// 回避策としてfork直後に子プロセス(forkの戻り値0)がexecを呼ぶようにする
+	// forkが必要な時はforkの時に特殊な処理を書きpthread_atfork()で登録すること
 	
 	// fork失敗
 	if(pid == -1)
@@ -59,11 +66,13 @@ int main(int argc, char **argv)
 	
 	if(pid == 0)
 	{
+		printf("tmp = %d\n", tmp);
 		// 子プロセスはforkの戻り値が0になる
 		child_process_func();
 	}
 	else
 	{
+		printf("tmp = %d\n", tmp);
 		// 親プロセスの処理
 		parent_process_func();
 	}
