@@ -4,6 +4,7 @@ CXXFLAGS = -Wall -O
 
 all:main main2
 
+.PHONY: clean
 clean:
 	rm -rf *.o *~ main main2
 
