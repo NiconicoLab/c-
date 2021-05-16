@@ -4,6 +4,7 @@ LDFLAGS = `pkg-config opencv4 --libs`
 
 all: show_image show_movie split_movie make_movie
 
+.PHONY: clean
 clean:
 	rm -rf show_image show_movie split_movie make_movie *.o *~
 
