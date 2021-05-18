@@ -4,6 +4,7 @@ LDFLAGS = -I /usr/local/include -L /usr/local/lib -lboost_system -lboost_thread-
 
 all: main main2
 
+.PHONY: clean
 clean:
 	rm -rf main main2 *.o *~
 
