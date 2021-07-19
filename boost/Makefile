@@ -1,4 +1,4 @@
-CXX = g++-10
+CXX = g++-11
 CXXFLAGS = -Wall -O
 LDFLAGS = -I /usr/local/include -L /usr/local/lib -lboost_system -lboost_thread-mt
 
