@@ -16,6 +16,10 @@ std::map<std::string , double(*)(int, int)> funcTable = {
 	{ "-", func2 },
 };
 
+std::map<std::string, int> sampleTable = {
+	{ "ABC", 12 },
+};
+
 int main(int argc, char* argv[])
 {
 	std::string str = "AAA";
@@ -34,6 +38,15 @@ int main(int argc, char* argv[])
 	}
 	else {
 		std::cout << "not found function" << std::endl;
+	}
+
+	// キー要素が存在していない場合の例
+	std::string str3 = "abc";
+	if(sampleTable.find(str) != sampleTable.end()) {
+		std::cout << sampleTable[str3] << std::endl;
+	}
+	else {
+		std::cout << "not found value" << std::endl;
 	}
 	
 	return 0;
